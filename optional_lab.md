@@ -4,7 +4,7 @@ Using the Airplanes API starter, create an Angular CRUD app that does the follow
 
 ##Requirements
 
-* Displays all airplanes contained by our API
+
   * Each airplane should have a link to a show page
   * Each airplane should also have an image (will involve altering the Airplane schema)
   * There should be a search bar that can filter the list of airplanes
@@ -12,7 +12,6 @@ Using the Airplanes API starter, create an Angular CRUD app that does the follow
 
 ##Getting Started
 
-* Work with 1-2 other people if desired
 * Ensure that the API endpoints are working as expected, using a client like Postman
 * Think about the design of the app and the components necessary
   * Views (via the Angular router)

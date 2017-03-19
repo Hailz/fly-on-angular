@@ -1,0 +1,7 @@
+<h1 class="text-center">{{ title }}</h1>
+<p ng-hide="planes">LOADING PLANES NOW...</p>
+
+<div ng-repeat="p in planes track by $index">
+  <h3><strong>{{p.manufacturer}}</strong> {{p.model}}</h3>
+  <a ng-href="/plane/{{p._id}}" class="btn btn-success">Details</a>
+</div>
