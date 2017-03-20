@@ -1,0 +1,10 @@
+body{
+  background-color: lightGray;
+}
+header{
+  background-color: black;
+  color: white;
+}
+.nav{
+  margin: 1.5%;
+}

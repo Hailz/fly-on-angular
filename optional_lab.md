@@ -4,8 +4,6 @@ Using the Airplanes API starter, create an Angular CRUD app that does the follow
 
 ##Requirements
 
-
-  * Each airplane should have a link to a show page
   * Each airplane should also have an image (will involve altering the Airplane schema)
   * There should be a search bar that can filter the list of airplanes
 * Allows creation of new airplanes

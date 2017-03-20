@@ -11,8 +11,7 @@ angular.module("FlyApp")
       //alter this so it has image etc, mongo stuffs
       $http.post("/api/airplanes", plane)
         .then(function success(res){
-          console.log("We did it!");
-          console.log(res);
+          console.log("We did it! " + res);
           return res.data;
         }, function error(err){
           console.log("This plane has been grounded." + err);
@@ -20,10 +19,18 @@ angular.module("FlyApp")
         })
     },
     deletePlane: function(id){
-      console.log("TODO");
+      console.log("Delete");
+      $http.delete("/api/airplanes/"+id)
+      .then(function success(res){
+        console.log("removed plane: " + res.data);
+        return res.data;
+      }, function error(err){
+        console.log("error: " + err);
+        return null;
+      })
     },
     updatePlane: function(plane){
-      console.log("ToDo too")
+      console.log("Update: " + res)
     }
   }
 }]);

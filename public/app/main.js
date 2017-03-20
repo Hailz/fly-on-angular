@@ -15,8 +15,14 @@ angular.module("FlyApp", ["ui.router"])
   })
   .state("create",{
     url: "/create",
-    templateUrl: "app/views/create.html"
+    templateUrl: "app/views/create.html",
+    controller: "addCtrl"
   })
+    .state("delete",{
+      url: "/delete/:id",
+      templateUrl: "app/views/delete.html",
+      controller: "deleteCtrl"
+    })
   .state("404", {
     url: "/404",
     templateUrl: "app/views/404.html"
