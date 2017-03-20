@@ -5,18 +5,18 @@ angular.module("FlyApp")
   $scope.searchResults = [];
 
   PlanesAPI.getPlanes().then(function success(res){
-    console.log("We have lift off.", res);
+    // console.log("We have lift off.", res);
     $scope.planes = res.data;
   }, function error(err){
-    console.log("Uh oh. Crashed.", err);
+    // console.log("Uh oh. Crashed.", err);
   })
 
   $scope.search = function(){
-    console.log("searching for " + this.searchTerm);
+    // console.log("searching for " + this.searchTerm);
     PlanesAPI.getPlanes().then(function success(res){
       $scope.searchResults = res.data;
     }, function error(err){
-      console.log("Crash and burn. " + err);
+      // console.log("Crash and burn. " + err);
     })
   }
 
@@ -26,18 +26,18 @@ angular.module("FlyApp")
   $scope.plane = {};
 
   PlanesAPI.getPlane($stateParams.id).then(function success(res){
-    console.log("Woo!", res);
+    // console.log("Woo!", res);
     $scope.plane = res.data;
   }, function error(err){
-    console.log("Boo!", err);
+    // console.log("Boo!", err);
   })
 
   $scope.updatePlane = function(){
-    console.log($scope.plane);
+    // console.log($scope.plane);
     PlanesAPI.updatePlane($scope.plane).then(function success(res){
-      console.log("Modifications made.", res);
+      // console.log("Modifications made.", res);
     }, function error(err){
-      console.log("Oh planes.", err)
+      // console.log("Oh planes.", err)
     })
   }
 }])

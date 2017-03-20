@@ -7,6 +7,7 @@ header{
 }
 .nav{
   margin: 1.5%;
+  color: white;
 }
 .deleteImg{
   width: 25%;
@@ -16,4 +17,14 @@ header{
 .planeImg{
   width: 25%;
   height: 25%;
+}
+.form-group{
+  display: inline-block;
+}
+.plane{
+  background-color: white;
+  padding: 2%;
+  margin: 2%;
+  border: 2px solid black;
+
 }

@@ -10,15 +10,15 @@
 </div>
 
 <div ng-if="searchTerm" ng-repeat="p in searchResults track by $index">
-  <div ng-if="p.model == searchTerm">
-    <h3><strong>{{p.manufacturer}}</strong> {{p.model}}</h3>
-    <a ng-href="/plane/{{p._id}}" class="btn btn-success">Details</a>
+  <div ng-if="p.model == searchTerm" class="plane">
+    <h3><strong>{{p.model}}</strong> Manufactured by: {{p.manufacturer}}</h3>
+    <a ng-href="/plane/{{p._id}}" class="btn btn-success">View Details</a>
     <a ng-href="/delete/{{p._id}}">Delete Plane</a>
   </div>
 </div>
 
-<div ng-if="!searchTerm" ng-repeat="p in planes track by $index">
-  <h3><strong>{{p.manufacturer}}</strong> {{p.model}}</h3>
-  <a ng-href="/plane/{{p._id}}" class="btn btn-success">Details</a>
-  <a ng-href="/delete/{{p._id}}">Delete Plane</a>
+<div ng-if="!searchTerm" ng-repeat="p in planes track by $index" class="plane">
+  <h3><strong>{{p.model}}</strong> Manufactured by: {{p.manufacturer}}</h3>
+  <a ng-href="/plane/{{p._id}}" class="btn btn-success">View Details</a>
+  <a ng-href="/delete/{{p._id}}" class="btn btn-danger">Delete Plane</a>
 </div>
