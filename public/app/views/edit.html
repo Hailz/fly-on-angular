@@ -1,0 +1,21 @@
+<h2>Edit {{plane.model}}</h2>
+
+<form ng-submit="updatePlane()">
+  <div class="form-group">
+    <label>Manufacturer:</label>
+    <input type="text" name="manufacturer" ng-model="plane.manufacturer">
+  </div>
+  <div class="form-group">
+    <label>Model:</label>
+    <input type="text" name="model" ng-model="plane.model">
+  </div>
+  <div class="form-group">
+    <label>Engines:</label>
+    <input type="number" name="engines" ng-model="plane.engines">
+  </div>
+  <div class="form-group">
+    <label>Image:</label>
+    <input type="text" name="image" ng-model="plane.image">
+  </div>
+  <input type="submit" value="Update">
+</form>

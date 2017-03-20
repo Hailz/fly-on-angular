@@ -8,3 +8,12 @@ header{
 .nav{
   margin: 1.5%;
 }
+.deleteImg{
+  width: 25%;
+  height: 25%;
+  border-radius: 5px;
+}
+.planeImg{
+  width: 25%;
+  height: 25%;
+}

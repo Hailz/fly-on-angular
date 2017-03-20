@@ -1,4 +1,4 @@
-<h1 class="text-center">{{ title }}</h1>
+<h2 class="text-center">{{ title }}</h2>
 <p ng-hide="planes">LOADING PLANES NOW...</p>
 
 <div>
@@ -9,12 +9,16 @@
   </form>
 </div>
 
-<div ng-repeat="p in planes track by $index">
+<div ng-if="searchTerm" ng-repeat="p in searchResults track by $index">
+  <div ng-if="p.model == searchTerm">
+    <h3><strong>{{p.manufacturer}}</strong> {{p.model}}</h3>
+    <a ng-href="/plane/{{p._id}}" class="btn btn-success">Details</a>
+    <a ng-href="/delete/{{p._id}}">Delete Plane</a>
+  </div>
+</div>
+
+<div ng-if="!searchTerm" ng-repeat="p in planes track by $index">
   <h3><strong>{{p.manufacturer}}</strong> {{p.model}}</h3>
   <a ng-href="/plane/{{p._id}}" class="btn btn-success">Details</a>
   <a ng-href="/delete/{{p._id}}">Delete Plane</a>
-  <!-- <form  ng-submit="deletePlane()">
-    <input hidden type="text"  ng-model="id" value="$p._id">
-    <input type="submit" value="Delete Plane">
-  </form> -->
 </div>

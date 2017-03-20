@@ -8,17 +8,6 @@ Using the Airplanes API starter, create an Angular CRUD app that does the follow
   * There should be a search bar that can filter the list of airplanes
 * Allows creation of new airplanes
 
-##Getting Started
-
-* Ensure that the API endpoints are working as expected, using a client like Postman
-* Think about the design of the app and the components necessary
-  * Views (via the Angular router)
-  * Resources (via Angular resource)
-  * Organization (data, controllers, services)
-  * Forms (search bar, new airplane)
-* Make it look good (CSS)
-* Work incrementally and save work frequently (via git)
-
 ##Bonuses
 
 * Instead of displaying every airplane, add pagination to the application

@@ -1,7 +1,8 @@
 angular.module("FlyApp")
-.controller("PlanesCtrl", ["$scope", "PlanesAPI", function($scope, PlanesAPI){
+.controller("PlanesCtrl", ["$scope", "$stateParams", "PlanesAPI", function($scope, $stateParams, PlanesAPI){
   $scope.title = "Look at all my planes!"
   $scope.planes = [];
+  $scope.searchResults = [];
 
   PlanesAPI.getPlanes().then(function success(res){
     console.log("We have lift off.", res);
@@ -9,6 +10,16 @@ angular.module("FlyApp")
   }, function error(err){
     console.log("Uh oh. Crashed.", err);
   })
+
+  $scope.search = function(){
+    console.log("searching for " + this.searchTerm);
+    PlanesAPI.getPlanes().then(function success(res){
+      $scope.searchResults = res.data;
+    }, function error(err){
+      console.log("Crash and burn. " + err);
+    })
+  }
+
 }])
 
 .controller("DetailCtrl", ["$scope", "$stateParams", "PlanesAPI", function($scope, $stateParams, PlanesAPI){
@@ -20,6 +31,15 @@ angular.module("FlyApp")
   }, function error(err){
     console.log("Boo!", err);
   })
+
+  $scope.updatePlane = function(){
+    PlanesAPI.updatePlane($scope.plane).then(function success(res){
+      console.log("Modifications made.", res)
+      $location.path("/plane/" + $scope.plane._id);
+    }, function error(err){
+      console.log("Oh planes.", err)
+    })
+  }
 }])
 .filter("fixGrammar", function(){
   return function(input){
@@ -29,6 +49,7 @@ angular.module("FlyApp")
       return input + " engines";
     }
   }
+
 })
 
 .controller("addCtrl", ["$scope", "$stateParams", "PlanesAPI", function($scope, $stateParams, PlanesAPI){
@@ -37,9 +58,14 @@ angular.module("FlyApp")
     var plane = {
       "manufacturer": this.manufacturer,
       "model": this.model,
-      "engines": this.engine
+      "engines": this.engines,
+      "image": this.image
     }
     PlanesAPI.addPlane(plane)
+    this.manufacturer = "",
+    this.model = "",
+    this.engines = 0,
+    this.image = ""
   }
 }])
 

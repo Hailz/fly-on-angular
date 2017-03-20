@@ -30,7 +30,15 @@ angular.module("FlyApp")
       })
     },
     updatePlane: function(plane){
-      console.log("Update: " + res)
+      console.log("Update: " + res);
+      return $http.put("api/airplanes/" + plane._id, plane)
+      .then(function success(res){
+        console.log("Lift off " + res)
+        return res.data;
+      }, function error(err){
+        console.log("Crash..." + err)
+        return null;
+      })
     }
   }
 }]);

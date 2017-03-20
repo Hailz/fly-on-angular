@@ -1,8 +1,12 @@
 <h1>Details about the {{plane.manufacturer}} {{plane.model}}</h1>
 
-<div>
+<div ng-if="!plane.image">
   <p>Images will be landing soon!</p>
 </div>
 
+<div ng-if="plane.image">
+  <img src="{{plane.image}}" class="planeImg">
+</div>
+
 <h3> Did you know this plane has {{plane.engines | fixGrammar}}?!</h3>
-<a href="/" class="btn btn-primary">Back</a>
+<a ng-href="/plane/edit/{{plane._id}}" class="btn btn-primary">Edit</a>
