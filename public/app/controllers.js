@@ -23,7 +23,7 @@ angular.module("FlyApp")
 }])
 
 .controller("DetailCtrl", ["$scope", "$stateParams", "PlanesAPI", function($scope, $stateParams, PlanesAPI){
-  $scope.plane = [];
+  $scope.plane = {};
 
   PlanesAPI.getPlane($stateParams.id).then(function success(res){
     console.log("Woo!", res);
@@ -33,9 +33,9 @@ angular.module("FlyApp")
   })
 
   $scope.updatePlane = function(){
+    console.log($scope.plane);
     PlanesAPI.updatePlane($scope.plane).then(function success(res){
-      console.log("Modifications made.", res)
-      $location.path("/plane/" + $scope.plane._id);
+      console.log("Modifications made.", res);
     }, function error(err){
       console.log("Oh planes.", err)
     })

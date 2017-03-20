@@ -30,7 +30,7 @@ angular.module("FlyApp")
       })
     },
     updatePlane: function(plane){
-      console.log("Update: " + res);
+      console.log("Update: ");
       return $http.put("api/airplanes/" + plane._id, plane)
       .then(function success(res){
         console.log("Lift off " + res)
